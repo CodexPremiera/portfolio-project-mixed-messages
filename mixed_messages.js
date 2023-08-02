@@ -1,109 +1,157 @@
 /* ==================== RANDOMIZER ==================== */
 function getRandomInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 /* ==================== STATEMENT BANK ==================== */
 const statements = {
-    _ancient: {
-        ancientPerson1: {
-            name: '',
-            quote: '',
+    ancient: [
+        {
+            name: 'Socrates',
+            quote: "The only true wisdom is in knowing you know nothing.",
         },
-        ancientPerson2: {
-            name: '',
-            quote: '',
+        {
+            name: 'Plato',
+            quote: "Wise men speak because they have something to say; fools because they have to say something.",
         },
-        ancientPerson3: {
-            name: '',
-            quote: '',
+        {
+            name: 'Aristotle',
+            quote: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
         },
-        ancientPerson4: {
-            name: '',
-            quote: '',
+        {
+            name: 'Epictetus',
+            quote: "It's not what happens to you, but how you react to it that matters.",
         },
-        ancientPerson5: {
-            name: '',
-            quote: '',
+        {
+            name: 'Marcus Aurelius',
+            quote: "You have power over your mind – not outside events. Realize this, and you will find strength.",
         },
-    },
-    _eastern: {
-        easternPerson1: {
-            name: '',
-            quote: '',
+    ],
+    eastern: [
+        {
+            name: 'Confucius',
+            quote: "Do not impose on others what you yourself do not desire.",
         },
-        easternPerson2: {
-            name: '',
-            quote: '',
+        {
+            name: 'Sun Tzu',
+            quote: "Appear weak when you are strong, and strong when you are weak.",
         },
-        easternPerson3: {
-            name: '',
-            quote: '',
+        {
+            name: 'Siddhartha Gautama Buddha',
+            quote: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
         },
-        easternPerson4: {
-            name: '',
-            quote: '',
+        {
+            name: 'Laozi',
+            quote: "A journey of a thousand miles begins with a single step.",
         },
-        easternPerson5: {
-            name: '',
-            quote: '',
+        {
+            name: 'Miyamoto Musashi',
+            quote: "In battle, if you make your opponent flinch, you have already won.",
         },
-    },
-    _renaissance: {
-        renaissancePerson1: {
-            name: '',
-            quote: '',
+    ],
+    renaissance: [
+        {
+            name: 'Leonardo da Vinci',
+            quote:  "Simplicity is the ultimate sophistication.",
         },
-        renaissancePerson2: {
-            name: '',
-            quote: '',
+        {
+            name: 'Michelangelo Buonarroti',
+            quote: "I saw the angel in the marble and carved until I set him free.",
         },
-        renaissancePerson3: {
-            name: '',
-            quote: '',
+        {
+            name: 'Niccolò Machiavelli',
+            quote: "It is better to be feared than loved if you cannot be both.",
         },
-        renaissancePerson4: {
-            name: '',
-            quote: '',
+        {
+            name: 'William Shakespeare',
+            quote: "All the world's a stage, and all the men and women merely players.",
         },
-        renaissancePerson5: {
-            name: '',
-            quote: '',
+        {
+            name: 'René Descartes',
+            quote: "I think, therefore I am.",
         },
-    },
-    _contemporary: {
-        contemporaryPerson1: {
-            name: '',
-            quote: '',
+    ],
+    leaders: [
+        {
+            name: 'John F. Kennedy',
+            quote: "Ask not what your country can do for you, ask what you can do for your country.",
         },
-        contemporaryPerson2: {
-            name: '',
-            quote: '',
+        {
+            name: 'Winston Churchill',
+            quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
         },
-        contemporaryPerson3: {
-            name: '',
-            quote: '',
+        {
+            name: 'Mahatma Gandhi',
+            quote: "Be the change that you wish to see in the world.",
         },
-        contemporaryPerson4: {
-            name: '',
-            quote: '',
+        {
+            name: 'Nelson Mandela',
+            quote: "Education is the most powerful weapon which you can use to change the world.",
         },
-        contemporaryPerson5: {
-            name: '',
-            quote: '',
+        {
+            name: 'Martin Luther King Jr',
+            quote: "I have a dream that one day this nation will rise up and live out the true meaning of its creed:" +
+                " 'We hold these truths to be self-evident, that all men are created equal.'",
         },
-    }
-}
+    ],
+    science: [
+        {
+            name: 'Isaac Newton',
+            quote: "No great discovery was made without a bold guess?",
+        },
+        {
+            name: 'Albert Einstein',
+            quote: "Imagination is more important than knowledge. For knowledge is limited, whereas imagination" +
+                " embraces the entire world, stimulating progress, giving birth to evolution.",
+        },
+        {
+            name: 'Marie Curie',
+            quote: "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more" +
+                " so that we may fear less.",
+        },
+        {
+            name: 'Charles Darwin',
+            quote: "It is not the strongest of the species that survives, nor the most intelligent that survives. It" +
+                " is the one that is the most adaptable to change.",
+        },
+        {
+            name: 'Galileo Galilei',
+            quote: "In questions of science, the authority of a thousand is not worth the humble reasoning of a" +
+                " single individual.",
+        },
+    ],
+    conquerors: [
+        {
+            name: 'Alexander the Great',
+            quote: "I am not afraid of an army of lions led by a sheep; I am afraid of an army of sheep led by a lion.",
+        },
+        {
+            name: 'Julius Ceasar',
+            quote: "Cowards die many times before their deaths; the valiant never taste of death but once",
+        },
+        {
+            name: 'Napoleon Bonaparte',
+            quote: "History is the version of past events that people have decided to agree upon.",
+        },
+        {
+            name: 'Suleiman the Magnificent',
+            quote: "Life is an hourglass. The sand will always run out, so make the most of every moment.",
+        },
+        {
+            name: 'Charlemagne',
+            quote: "To show resentment at a reproach is to acknowledge that one may have deserved it.",
+        },
+    ]
+};
+
 
 /* ==================== RANDOM PICKER LOGIC ==================== */
 function generateQuote(statements) {
     const genres = Object.keys(statements);
-    const chosenGenre = genres[getRandomInteger(0, genres.length - 1)];
+    const chosenGenre = genres[getRandomInteger(0, genres.length)];
+    const chosenGenreQuotes = statements[chosenGenre];
 
-    const people = Object.keys(statements[chosenGenre]);
-    const chosenPerson = people[getRandomInteger(0, people.length - 1)];
-
-    return statements[chosenGenre][chosenPerson];
+    return chosenGenreQuotes[getRandomInteger(0, chosenGenreQuotes.length)];
 }
 
 let randomQuote = generateQuote(statements);
