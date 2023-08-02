@@ -1,96 +1,110 @@
 /* ==================== RANDOMIZER ==================== */
-const generateRandomNumber = range =>
-    Math.floor(Math.random() * range);
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 /* ==================== STATEMENT BANK ==================== */
 const statements = {
     _ancient: {
-        person1: {
+        ancientPerson1: {
             name: '',
             quote: '',
         },
-        person2: {
+        ancientPerson2: {
             name: '',
             quote: '',
         },
-        person3: {
+        ancientPerson3: {
             name: '',
             quote: '',
         },
-        person4: {
+        ancientPerson4: {
             name: '',
             quote: '',
         },
-        person5: {
+        ancientPerson5: {
             name: '',
             quote: '',
         },
     },
     _eastern: {
-        person1: {
+        easternPerson1: {
             name: '',
             quote: '',
         },
-        person2: {
+        easternPerson2: {
             name: '',
             quote: '',
         },
-        person3: {
+        easternPerson3: {
             name: '',
             quote: '',
         },
-        person4: {
+        easternPerson4: {
             name: '',
             quote: '',
         },
-        person5: {
+        easternPerson5: {
             name: '',
             quote: '',
         },
     },
     _renaissance: {
-        person1: {
+        renaissancePerson1: {
             name: '',
             quote: '',
         },
-        person2: {
+        renaissancePerson2: {
             name: '',
             quote: '',
         },
-        person3: {
+        renaissancePerson3: {
             name: '',
             quote: '',
         },
-        person4: {
+        renaissancePerson4: {
             name: '',
             quote: '',
         },
-        person5: {
+        renaissancePerson5: {
             name: '',
             quote: '',
         },
     },
     _contemporary: {
-        person1: {
+        contemporaryPerson1: {
             name: '',
             quote: '',
         },
-        person2: {
+        contemporaryPerson2: {
             name: '',
             quote: '',
         },
-        person3: {
+        contemporaryPerson3: {
             name: '',
             quote: '',
         },
-        person4: {
+        contemporaryPerson4: {
             name: '',
             quote: '',
         },
-        person5: {
+        contemporaryPerson5: {
             name: '',
             quote: '',
         },
     }
 }
 
+/* ==================== RANDOM PICKER LOGIC ==================== */
+function generateQuote(statements) {
+    const genres = Object.keys(statements);
+    const chosenGenre = genres[getRandomInteger(0, genres.length - 1)];
+
+    const people = Object.keys(statements[chosenGenre]);
+    const chosenPerson = people[getRandomInteger(0, people.length - 1)];
+
+    return statements[chosenGenre][chosenPerson];
+}
+
+let randomQuote = generateQuote(statements);
+console.log(randomQuote);
