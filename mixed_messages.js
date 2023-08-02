@@ -1,151 +1,149 @@
-/* ==================== RANDOMIZER ==================== */
-function getRandomInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
 /* ==================== STATEMENT BANK ==================== */
 const statements = {
     ancient: [
         {
-            name: 'Socrates',
+            author: 'Socrates',
             quote: "The only true wisdom is in knowing you know nothing.",
         },
         {
-            name: 'Plato',
+            author: 'Plato',
             quote: "Wise men speak because they have something to say; fools because they have to say something.",
         },
         {
-            name: 'Aristotle',
+            author: 'Aristotle',
             quote: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
         },
         {
-            name: 'Epictetus',
+            author: 'Epictetus',
             quote: "It's not what happens to you, but how you react to it that matters.",
         },
         {
-            name: 'Marcus Aurelius',
+            author: 'Marcus Aurelius',
             quote: "You have power over your mind – not outside events. Realize this, and you will find strength.",
         },
     ],
     eastern: [
         {
-            name: 'Confucius',
+            author: 'Confucius',
             quote: "Do not impose on others what you yourself do not desire.",
         },
         {
-            name: 'Sun Tzu',
+            author: 'Sun Tzu',
             quote: "Appear weak when you are strong, and strong when you are weak.",
         },
         {
-            name: 'Siddhartha Gautama Buddha',
+            author: 'Siddhartha Gautama Buddha',
             quote: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
         },
         {
-            name: 'Laozi',
+            author: 'Laozi',
             quote: "A journey of a thousand miles begins with a single step.",
         },
         {
-            name: 'Miyamoto Musashi',
+            author: 'Miyamoto Musashi',
             quote: "In battle, if you make your opponent flinch, you have already won.",
         },
     ],
     renaissance: [
         {
-            name: 'Leonardo da Vinci',
+            author: 'Leonardo da Vinci',
             quote:  "Simplicity is the ultimate sophistication.",
         },
         {
-            name: 'Michelangelo Buonarroti',
+            author: 'Michelangelo Buonarroti',
             quote: "I saw the angel in the marble and carved until I set him free.",
         },
         {
-            name: 'Niccolò Machiavelli',
+            author: 'Niccolò Machiavelli',
             quote: "It is better to be feared than loved if you cannot be both.",
         },
         {
-            name: 'William Shakespeare',
+            author: 'William Shakespeare',
             quote: "All the world's a stage, and all the men and women merely players.",
         },
         {
-            name: 'René Descartes',
+            author: 'René Descartes',
             quote: "I think, therefore I am.",
         },
     ],
     leaders: [
         {
-            name: 'John F. Kennedy',
+            author: 'John F. Kennedy',
             quote: "Ask not what your country can do for you, ask what you can do for your country.",
         },
         {
-            name: 'Winston Churchill',
+            author: 'Winston Churchill',
             quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
         },
         {
-            name: 'Mahatma Gandhi',
+            author: 'Mahatma Gandhi',
             quote: "Be the change that you wish to see in the world.",
         },
         {
-            name: 'Nelson Mandela',
+            author: 'Nelson Mandela',
             quote: "Education is the most powerful weapon which you can use to change the world.",
         },
         {
-            name: 'Martin Luther King Jr',
+            author: 'Martin Luther King Jr',
             quote: "I have a dream that one day this nation will rise up and live out the true meaning of its creed:" +
-                " 'We hold these truths to be self-evident, that all men are created equal.'",
+                "\n 'We hold these truths to be self-evident, that all men are created equal.'",
         },
     ],
     science: [
         {
-            name: 'Isaac Newton',
+            author: 'Isaac Newton',
             quote: "No great discovery was made without a bold guess?",
         },
         {
-            name: 'Albert Einstein',
-            quote: "Imagination is more important than knowledge. For knowledge is limited, whereas imagination" +
-                " embraces the entire world, stimulating progress, giving birth to evolution.",
+            author: 'Albert Einstein',
+            quote: "Imagination is more important than knowledge. \n" +
+                " For knowledge is limited, whereas imagination embraces the entire world," +
+                "\n stimulating progress, giving birth to evolution.",
         },
         {
-            name: 'Marie Curie',
-            quote: "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more" +
-                " so that we may fear less.",
+            author: 'Marie Curie',
+            quote: "Nothing in life is to be feared, it is only to be understood." +
+                "\n Now is the time to understand more so that we may fear less.",
         },
         {
-            name: 'Charles Darwin',
-            quote: "It is not the strongest of the species that survives, nor the most intelligent that survives. It" +
-                " is the one that is the most adaptable to change.",
+            author: 'Charles Darwin',
+            quote: "It is not the strongest of the species that survives, nor the most intelligent that survives." +
+                "\n It is the one that is the most adaptable to change. ",
         },
         {
-            name: 'Galileo Galilei',
-            quote: "In questions of science, the authority of a thousand is not worth the humble reasoning of a" +
-                " single individual.",
+            author: 'Galileo Galilei',
+            quote: "In questions of science, the authority of a thousand is not worth" +
+                "\n the humble reasoning of a single individual.",
         },
     ],
     conquerors: [
         {
-            name: 'Alexander the Great',
+            author: 'Alexander the Great',
             quote: "I am not afraid of an army of lions led by a sheep; I am afraid of an army of sheep led by a lion.",
         },
         {
-            name: 'Julius Ceasar',
+            author: 'Julius Ceasar',
             quote: "Cowards die many times before their deaths; the valiant never taste of death but once",
         },
         {
-            name: 'Napoleon Bonaparte',
+            author: 'Napoleon Bonaparte',
             quote: "History is the version of past events that people have decided to agree upon.",
         },
         {
-            name: 'Suleiman the Magnificent',
+            author: 'Suleiman the Magnificent',
             quote: "Life is an hourglass. The sand will always run out, so make the most of every moment.",
         },
         {
-            name: 'Charlemagne',
+            author: 'Charlemagne',
             quote: "To show resentment at a reproach is to acknowledge that one may have deserved it.",
         },
     ]
 };
 
-
 /* ==================== RANDOM PICKER LOGIC ==================== */
+const getRandomInteger = (min, max) =>
+    Math.floor(Math.random() * (max - min)) + min;
+
 function generateQuote(statements) {
     const genres = Object.keys(statements);
     const chosenGenre = genres[getRandomInteger(0, genres.length)];
@@ -154,5 +152,9 @@ function generateQuote(statements) {
     return chosenGenreQuotes[getRandomInteger(0, chosenGenreQuotes.length)];
 }
 
-let randomQuote = generateQuote(statements);
+/* ==================== QUOTE FORMATTING ==================== */
+const formatQuote = quote =>
+    `"${quote.quote}" \n  — ${quote.author}`;
+
+let randomQuote = formatQuote(generateQuote(statements));
 console.log(randomQuote);
